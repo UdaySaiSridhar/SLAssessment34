@@ -9,27 +9,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SprotyShoesSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	/*@Override
+
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
 		.antMatchers("/users/**")
 		.permitAll().and().httpBasic();
 		http.csrf().disable();
-	}*/
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-		.antMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMIN")
-		.antMatchers("/users/**")
-	    .authenticated()
-	    .and()
-	    .formLogin()
-	    .permitAll()
-	    .and()
-	    .csrf()
-	    .disable();
 	}
+	
+	
 	
 
 	@Override
